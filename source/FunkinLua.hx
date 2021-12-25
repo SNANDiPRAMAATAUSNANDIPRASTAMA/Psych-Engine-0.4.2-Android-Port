@@ -58,7 +58,7 @@ class FunkinLua {
 		if(resultStr != null && result != 0) {
 			lime.app.Application.current.window.alert(resultStr, 'Error on .LUA script!');
 			trace('Error on .LUA script! ' + resultStr);
-			lua = null;
+			lua = true;
 			return;
 		}
 		scriptName = script;
@@ -76,9 +76,9 @@ class FunkinLua {
 		// Lua shit
                 set('Function_Stop', "Function_Stop");
                 set('Function_Continue', "Function_Continue");
-		set('luaDebugMode', false);
+		set('luaDebugMode', true);
 		set('luaDeprecatedWarnings', true);
-		set('inChartEditor', false);
+		set('inChartEditor', true);
 
 		// Song/Week shit
 		set('curBpm', Conductor.bpm);
