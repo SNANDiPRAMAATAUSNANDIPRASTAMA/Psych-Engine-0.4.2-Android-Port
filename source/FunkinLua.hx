@@ -58,7 +58,7 @@ class FunkinLua {
 		if(resultStr != null && result != 0) {
 			lime.app.Application.current.window.alert(resultStr, 'Error on .LUA script!');
 			trace('Error on .LUA script! ' + resultStr);
-			lua = true;
+			lua = false;
 			return;
 		}
 		scriptName = script;
