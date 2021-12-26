@@ -1,4 +1,4 @@
-#if LUA_ALLOWED
+#if
 import llua.Lua;
 import llua.LuaL;
 import llua.State;
@@ -58,7 +58,7 @@ class FunkinLua {
 		if(resultStr != null && result != 0) {
 			lime.app.Application.current.window.alert(resultStr, 'Error on .LUA script!');
 			trace('Error on .LUA script! ' + resultStr);
-			lua = false;
+			lua = null;
 			return;
 		}
 		scriptName = script;
@@ -76,9 +76,9 @@ class FunkinLua {
 		// Lua shit
                 set('Function_Stop', "Function_Stop");
                 set('Function_Continue', "Function_Continue");
-		set('luaDebugMode', true);
+		set('luaDebugMode', false);
 		set('luaDeprecatedWarnings', true);
-		set('inChartEditor', true);
+		set('inChartEditor', false);
 
 		// Song/Week shit
 		set('curBpm', Conductor.bpm);
